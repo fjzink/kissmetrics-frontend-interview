@@ -1,0 +1,9 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for react apps.",
+  "main": "index.js",
+  "repository": "https://github.com/fjzink/react-boilerplate",
+  "author": "Joey Zink",
+  "license": "MIT"
+}

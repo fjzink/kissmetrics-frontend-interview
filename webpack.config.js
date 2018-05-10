@@ -1,5 +1,12 @@
 const path = require('path');
 
+const devMode = process.env.NODE_ENV !== 'production'
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const miniCssPlugin = new MiniCssExtractPlugin({
+    filename: devMode ? '[name].css' : '[name].[hash].css',
+    chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+});
+
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -26,7 +33,7 @@ module.exports = {
             test: /\.s?[ac]ss$/,
             use: [
                 {
-                    loader: 'style-loader'
+                    loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader
                 },
                 {
                     loader: 'css-loader',
@@ -45,7 +52,7 @@ module.exports = {
         }
       ]
     },
-    plugins: [htmlPlugin],
+    plugins: [htmlPlugin, miniCssPlugin],
     devServer: {
         historyApiFallback: true,
         port: 8080,

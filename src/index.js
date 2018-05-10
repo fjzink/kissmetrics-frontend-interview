@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './styles.scss'
+import App from './components/App';
 
-const Index = () => {
-  return <div className={styles.hello}>Hello World!{process.env.NODE_ENV}</div>;
-};
-
-ReactDOM.render(<Index />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

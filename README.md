@@ -6,31 +6,23 @@ This is my boilerplate set up for a React app bundled with Webpack with some of 
 1. Clone the repo to your local machine. 
 
 
-```
-git clone https://github.com/fjzink/react-boilerplate.git
-```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```git clone https://github.com/fjzink/react-boilerplate.git```
 
 
 2. Install the dependencies with your package manager of choice.
 
 
-```
-yarn install
-```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```yarn install```
 
 
 3. There are scripts to run the development server and to create an optimized production build. 
 
-To start the development server run the `start` script:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To start the development server run the `start` script:
 
-```
-yarn start
-```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```yarn start```
 
-To create a production build of the react app, run the `build` script:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To create a production build of the react app, run the `build` script:
 
-```
-yarn build
-```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```yarn build```
 
-This will create a `dist/` folder in the root directory of the project if it does not already exist and output your bundled project files into this folder.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This will create a `dist/` folder in the root directory of the project if it does not already exist and output your bundled project files into this folder.

@@ -1,3 +1,5 @@
+const path = require('path');
+
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -6,6 +8,11 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
     module: {
       rules: [
         {

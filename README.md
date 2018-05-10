@@ -21,13 +21,14 @@ yarn install
 
 There are scripts to run the development server and to create an optimized production build. 
 
+
 To start the development server run the `start` script:
 
 ```
 yarn start
 ```
 
-To create a production build of the react app, run the `build` script:
+To create a production build of the react app run the `build` script:
 
 ```
 yarn build

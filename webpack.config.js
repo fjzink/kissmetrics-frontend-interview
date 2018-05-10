@@ -23,20 +23,23 @@ module.exports = {
           }
         },
         {
-            test: /\.css$/,
+            test: /\.s?[ac]ss$/,
             use: [
                 {
-                    loader: "style-loader"
+                    loader: 'style-loader'
                 },
                 {
-                    loader: "css-loader",
+                    loader: 'css-loader',
                     options: {
                         modules: true,
                         importLoaders: 1,
-                        localIdentName: "[name]_[local]_[hash:base64]",
+                        localIdentName: '[name]_[local]_[hash:base64]',
                         sourceMap: true,
                         minimize: true
                     }
+                },
+                {
+                    loader: 'sass-loader'
                 }
             ]
         }

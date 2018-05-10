@@ -53,9 +53,6 @@ module.exports = {
       ]
     },
     plugins: [htmlPlugin, miniCssPlugin],
-    resolve: {
-        extensions: ['.js', '.jsx', '']
-      },
     devServer: {
         historyApiFallback: true,
         port: 8080,

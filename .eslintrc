@@ -5,5 +5,8 @@
     ],
     "extends": ["airbnb-base"],
     "rules": {
+        "no-unused-vars": 0,
+        "arrow-body-style": 0,
+        "indent": 0
     }
 }

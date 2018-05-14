@@ -3,6 +3,7 @@
     "plugins": [
         "react"
     ],
+    "extends": ["airbnb-base"],
     "rules": {
     }
 }

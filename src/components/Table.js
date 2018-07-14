@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 
+import data from '../data/data.json';
+
 class Table extends Component {
     constructor(props) {
         super(props);
-        this.state = { sort: 'name' };
+        this.state = {
+            sortBy: 'name',
+            people: data,
+        };
     }
 
     render() {
-       const { sort } = this.state;
+       const { people } = this.state;
         return (
-            <div>
-                {sort}
+            <div className="Table">
+                {people[0].name}
             </div>
         );
     }

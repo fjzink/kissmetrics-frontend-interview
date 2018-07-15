@@ -12,6 +12,7 @@ class Table extends Component {
             sortBy: 'name',
             people: data,
         };
+        this.setSortBy = this.setSortBy.bind(this);
     }
 
     renderRows() {
@@ -19,11 +20,18 @@ class Table extends Component {
         return people.map((person, index) => <Row key={index} person={person} />);
     }
 
+    setSortBy(e) {
+        this.setState({ sortBy: e.target.innerHTML });
+    }
+
     render() {
-       const { people } = this.state;
+       const { people, sortBy } = this.state;
         return (
             <table className={'Table'}>
-                <Headers headers={Object.keys(people[0])} />
+                <Headers
+                    headers={Object.keys(people[0])}
+                    setSortBy={this.setSortBy}
+                />
                 <tbody>
                     {this.renderRows()}
                 </tbody>

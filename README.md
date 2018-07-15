@@ -21,7 +21,7 @@ yarn install
 
 There are scripts to run the development server and to create an optimized production build. 
 
-
+### Starting the Development Server
 To start the development server run the `start` script:
 
 ```
@@ -30,6 +30,7 @@ yarn start
 
 Running the `start` script will automatically open a new tab in your browser.
 
+### Creating a Production Build
 To create a production build of the react app run the `build` script:
 
 ```

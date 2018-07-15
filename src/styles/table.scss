@@ -1,18 +1,28 @@
 table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border: 2px solid black;
-  }
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid black;
+}
   
-  th, td {
-    padding: 10px;
-  }
+th, td {
+  padding: 10px;
+}
   
-  tbody td {
+$blue-cell: #c6e4ff;
+
+tbody {
+  td {
     text-align: center;
   }
-
-  tbody tr:nth-child(odd) {
-    background-color: #c6e4ff;
+  tr:nth-child(even) {
+    background-color: $blue-cell;
   }
+}
+
+$green-cell: #bcffcf;
+
+.header {
+  background-color: $green-cell;
+  text-transform: capitalize;
+}

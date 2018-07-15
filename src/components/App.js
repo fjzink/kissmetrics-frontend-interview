@@ -1,9 +1,11 @@
 import React from 'react';
-import styles from '../styles/styles.scss';
+import Table from './Table';
 
 const App = () => {
     return (
-            <div className={styles.hello}>Hello World!</div>
+            <div>
+                <Table />
+            </div>
     );
 };
 

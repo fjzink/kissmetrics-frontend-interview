@@ -38,3 +38,9 @@ yarn build
 ```
 
 This will create a `dist/` folder in the root directory of the project if it does not already exist and output your bundled project files into this folder.
+
+You can open the production build with:
+
+```
+open dist/index.html
+```

@@ -1,6 +1,9 @@
 # Kissmetrics Frontend Interview
 This is a React `Table` component with sortable columns. I created a `Headers` component and a `Row` component to render the headers and rows of the table.
 
+## How It Works
+You can sort a column by clicking on the header of a column. The first time you click on a header it sorts the column in ascending order, and each click thereafter alternates the sorting between ascending and descending order.
+
 ## Usage
 
 Clone the repo to your local machine. 

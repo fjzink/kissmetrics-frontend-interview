@@ -1,15 +1,35 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/table.scss';
 
-function renderHeaders(headers) {
-    return headers.map((header, index) => <th className={styles.header} scope="col" key={index}>{header}</th>);
+function renderIcon(order) {
+    if (order === 'descending') {
+        return <FontAwesomeIcon icon={faSortDown} className={styles.sortIcon} />;
+    }
+    return <FontAwesomeIcon icon={faSortUp} className={styles.sortIcon} />;
+}
+
+function renderHeaders(headers, sort, sortBy, order) {
+    return headers.map((header, index) => {
+        return (
+            <th
+                className={styles.header}
+                scope="col"
+                key={index}
+            >
+                <span onClick={sort}>{header}</span>
+                {header === sortBy ? renderIcon(order) : null}
+            </th>
+        );
+    });
 }
 
 const Headers = (props) => {
     return (
         <thead>
             <tr className={`Headers ${styles.header}`}>
-                {renderHeaders(props.headers)}
+                {renderHeaders(props.headers, props.setSortBy, props.sortBy, props.sortOrder)}
             </tr>
         </thead>
     );

@@ -18,7 +18,7 @@ function renderHeaders(headers, sort, sortBy, order) {
                 scope="col"
                 key={index}
             >
-                <span onClick={sort}>{header}</span>
+                <span className={styles.headerClick} onClick={sort}>{header}</span>
                 {header === sortBy ? renderIcon(order) : null}
             </th>
         );

@@ -10,6 +10,7 @@ class Table extends Component {
         super(props);
         this.state = {
             sortBy: '',
+            sortOrder: 'ascending',
             people: data,
         };
         this.setSortBy = this.setSortBy.bind(this);
@@ -21,25 +22,49 @@ class Table extends Component {
     }
 
     setSortBy(e) {
+        const { sortBy, sortOrder, people } = this.state;
         const newSort = e.target.innerHTML;
+        let newSortOrder = sortOrder;
+        if (newSort === sortBy) {
+            switch (sortOrder) {
+                case 'ascending':
+                    newSortOrder = 'descending';
+                    this.setState({ sortOrder: newSortOrder });
+                    break;
+                case 'descending':
+                    newSortOrder = 'ascending';
+                    this.setState({ sortOrder: newSortOrder });
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            newSortOrder = 'ascending';
+            this.setState({ sortOrder: newSortOrder });
+        }
         this.setState({ sortBy: newSort });
 
-        const { people } = this.state;
         let sorted = people.slice(0);
         sorted = sorted.sort((a, b) => {
-            return this.sortAscending(a, b, newSort);
+            return this.sortPeople(a, b, newSort, newSortOrder);
         });
         this.setState({ people: sorted });
     }
 
-    sortAscending = (a, b, sort) => {
+    sortPeople = (a, b, sort, order) => {
         const nameA = a[sort].toUpperCase();
             const nameB = b[sort].toUpperCase();
 
             if (nameA < nameB) {
+                if (order === 'descending') {
+                    return 1;
+                }
                 return -1;
             }
             if (nameA > nameB) {
+                if (order === 'descending') {
+                    return -1;
+                }
                 return 1;
             }
             return 0;

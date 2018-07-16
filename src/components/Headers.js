@@ -5,9 +5,9 @@ import styles from '../styles/table.scss';
 
 function renderIcon(order) {
     if (order === 'descending') {
-        return <FontAwesomeIcon icon={faSortDown} />;
+        return <FontAwesomeIcon icon={faSortDown} className={styles.sortIcon} />;
     }
-    return <FontAwesomeIcon icon={faSortUp} />;
+    return <FontAwesomeIcon icon={faSortUp} className={styles.sortIcon} />;
 }
 
 function renderHeaders(headers, sort, sortBy, order) {

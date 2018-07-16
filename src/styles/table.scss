@@ -1,8 +1,10 @@
+$border-color: #00317f;
+
 table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid black;
+  border: 2px solid $border-color;
 }
   
 th, td {

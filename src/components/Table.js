@@ -10,7 +10,7 @@ class Table extends Component {
         super(props);
         this.state = {
             sortBy: '',
-            sortOrder: 'ascending',
+            sortOrder: '',
             people: data,
         };
         this.setSortBy = this.setSortBy.bind(this);
@@ -71,12 +71,14 @@ class Table extends Component {
     }
 
     render() {
-       const { people, sortBy } = this.state;
+       const { people, sortOrder, sortBy } = this.state;
         return (
             <table className={'Table'}>
                 <Headers
                     headers={Object.keys(people[0])}
                     setSortBy={this.setSortBy}
+                    sortOrder={sortOrder}
+                    sortBy={sortBy}
                 />
                 <tbody>
                     {this.renderRows()}
